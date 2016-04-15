@@ -26,7 +26,7 @@ export default class Form extends React.Component {
     const { sending, movie } = this.props;
     const { title="", overview="", posterUrl="", releasedDate, director="" } = movie;
     const sendText = sending ? "Sending..." : "Send";
-    const sendDisabled = !(overview != "" && title != "" && director != "" && releasedDate);
+    const sendDisabled = !(overview != "" && title != "" && director != "" && releasedDate) || sending;
     return (
       <div>
         <TextField

@@ -48,6 +48,9 @@ export default class NewMovie extends React.Component {
         }
       });
     } else {
+      this.setState({
+        sending: false
+      });
       CatalogActions.openSnack("Error: movie was not created", 8000);
     }
   }
@@ -127,7 +130,9 @@ export default class NewMovie extends React.Component {
     }
 
     if (movie.director) {
-      movie.director = movie.director.join(', ');
+      if (typeof movie.director != "string") {
+        movie.director = movie.director.join(', ');
+      }
     }
 
     if (movie.genres) {

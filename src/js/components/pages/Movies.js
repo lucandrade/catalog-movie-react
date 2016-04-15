@@ -1,6 +1,7 @@
 import React from "react";
 import SelectField from 'material-ui/lib/select-field';
 import MenuItem from 'material-ui/lib/menus/menu-item';
+import GridList from 'material-ui/lib/grid-list/grid-list';
 
 import GenreStore from '../../stores/GenreStore';
 import MovieStore from '../../stores/MovieStore';
@@ -16,7 +17,8 @@ export default class Movies extends React.Component {
     this.state = {
       genres: [],
       loading: true,
-      value: null
+      value: null,
+      movies: []
     }
     CatalogActions.listGenres();
     CatalogActions.listMovies();
@@ -61,17 +63,12 @@ export default class Movies extends React.Component {
         return <MenuItem key={i} value={genre.slug} primaryText={genre.name} />;
       });
     }
-    const moviesTiles = movies.map({
-
+    const moviesTiles = movies.map((movie, i) => {
+      return <Movie key={i} movie={movie} />
     });
     return (
       <div>
-        <SelectField
-          value={this.state.value}
-          floatingLabelText={text}
-          onChange={this.handleChange.bind(this)}>
-          {items}
-        </SelectField>
+        <div>{moviesTiles}</div>
       </div>
     );
   }
