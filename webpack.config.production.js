@@ -39,5 +39,5 @@ module.exports = {
     path: "/Users/lucas/Documents/workspace-sts-3.7.3.RELEASE/MovieCatalog/src/main/webapp/resources/",
     filename: "app.min.js"
   },
-  plugins: debug ? devPlugins : productionPlugins,
+  plugins: productionPlugins,
 };

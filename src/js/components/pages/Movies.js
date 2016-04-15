@@ -40,16 +40,12 @@ export default class Movies extends React.Component {
   handleChange = (event, index, value) => this.setState({value});
 
   componentWillMount() {
-    // document.documentElement.style = "background: #e6e6e6";
-    // document.body.style = "background: #e6e6e6";
     CatalogActions.setPage('movie');
     GenreStore.on('change', this.getGenres);
     MovieStore.on('changeList', this.getList);
   }
 
   componentWillUnmount() {
-    // document.documentElement.style = "";
-    document.body.style = "";
     GenreStore.removeListener('change', this.getGenres);
     MovieStore.removeListener('changeList', this.getList);
   }

@@ -42,6 +42,13 @@ export default class Form extends React.Component {
           primary={true}
           onTouchTap={this.handleSearchButtonClick.bind(this)} />
         <TextField
+          floatingLabelText="Poster URL"
+          disabled={sending}
+          value={posterUrl}
+          name="posterUrl"
+          fullWidth={true}
+          onChange={this.handleFormChange.bind(this)} />
+        <TextField
           floatingLabelText="Director"
           disabled={sending}
           value={director}
