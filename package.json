@@ -1,0 +1,33 @@
+{
+  "name": "catalog-movie",
+  "version": "1.0.0",
+  "description": "SPA catalog movie application",
+  "main": "webpack.cnonfig.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Andrade",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.9.1",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "copy-webpack-plugin": "*",
+    "flux": "^2.1.1",
+    "history": "^2.0.1",
+    "material-ui": "^0.14.4",
+    "querystring": "^0.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-router": "^2.2.0",
+    "react-tap-event-plugin": "^0.2.2",
+    "webpack": "^1.12.9"
+  }
+}
