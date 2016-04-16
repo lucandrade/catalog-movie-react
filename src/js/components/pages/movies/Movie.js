@@ -7,13 +7,43 @@ import CardTitle from 'material-ui/lib/card/card-title';
 import FlatButton from 'material-ui/lib/flat-button';
 import CardText from 'material-ui/lib/card/card-text';
 
+import Constants from '../../../constants/AppConstants';
+
 export default class Movie extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: true
+    }
+  }
+
+  handleImageLoad(loaded) {
+    if (loaded === true) {
+      this.setState({
+        loading: false
+      });
+    }
+  }
+
   render() {
     const { id, title, director, poster } = this.props.movie;
-    let image = <img src={poster} />;
-    if (!poster) {
-      image = <img src="http://www.hollymatic.com/sites/default/files/styles/product_medium/public/no_image_available.png?itok=-tNvqcyn" />;
+    const { loading } = this.state;
+    let imageStyle = { display: "none" };
+
+    if (!loading) {
+      imageStyle = {};
     }
+
+    let image = [<img
+                  style={imageStyle}
+                  onLoad={this.handleImageLoad.bind(this, true)}
+                  onError={this.handleImageLoad.bind(this, false)}
+                  src={poster} />];
+
+    if (loading) {
+      image.push(<img src={Constants.url + Constants.image_uri + "no_image_available.png" } />);
+    }
+
     const titleStyle = {
       fontSize: "18px",
       "lineHeight": "20px",

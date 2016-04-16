@@ -4,7 +4,8 @@ var webpack = require('webpack');
 
 var devPlugins = [
   new CopyWebpackPlugin([
-    { from: './css/*', to: 'css' }
+    { from: './css/*', to: 'css' },
+    { from: './img/*', to: 'img' },
   ])
 ];
 

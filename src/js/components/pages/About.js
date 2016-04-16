@@ -11,6 +11,7 @@ import Avatar from 'material-ui/lib/avatar';
 
 import AppStore from '../../stores/AppStore';
 import * as CatalogActions from '../../actions/CatalogActions';
+import Constants from '../../constants/AppConstants';
 
 export default class About extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export default class About extends React.Component {
   }
 
   render() {
+    const imageUrl = Constants.url + Constants.image_uri;
     const subtitle = <span>by <a
                         style={{color: "rgba(0, 0, 0, 0.54)", "text-decoration": "none"}}
                         target="_blank" href="https://br.linkedin.com/in/lucas-andrade-39b901b1">
@@ -51,14 +53,18 @@ export default class About extends React.Component {
                   linkButton={true}
                   href="https://github.com/lucandrade/catalog-movie-java"
                   secondary={true}
-                  target="_blank" />
+                  target="_blank"
+                  labelPosition="before"
+                  icon={<Avatar src={imageUrl + "github.png" } />} />
               <RaisedButton
                   label="Frontend"
                   linkButton={true}
                   style={{marginLeft: "10px"}}
                   href="https://github.com/lucandrade/catalog-movie-react"
                   secondary={true}
-                  target="_blank" />
+                  target="_blank"
+                  labelPosition="before"
+                  icon={<Avatar src={imageUrl + "github.png" } />} />
             </CardText>
           </Card>
         </div>
@@ -68,11 +74,11 @@ export default class About extends React.Component {
             <CardTitle title="Backend" subtitle="Java" />
             <CardText>
               <ul class="tech-list">
-                <li>Java EE 8 <Avatar src="http://www.filecroco.com/64_px/java-runtime-environment-icon-64.png" /></li>
-                <li>Spring Framework 4.2.5 <Avatar src="https://pbs.twimg.com/profile_images/378800000502646541/992d3596458fca87741b8e93e7df0860_normal.png" /></li>
-                <li>Hibernate 5.1 <Avatar src="http://www.jupra.com/layout/img/hibernate.png" /></li>
-                <li>Tomcat 7 <Avatar src="https://s3.amazonaws.com/cloud.ohloh.net/attachments/831/tomcat_med.png" /></li>
-                <li>Docker <Avatar src="https://cloud.docker.com/_static/assets/images/dockerimages/docker-64.png" /></li>
+                <li>Java EE 8 <Avatar src={imageUrl + "javaee8.png" } /></li>
+                <li>Spring Framework 4.2.5 <Avatar src={imageUrl + "spring.png" } /></li>
+                <li>Hibernate 5.1 <Avatar src={imageUrl + "hibernate.png" } /></li>
+                <li>Tomcat 7 <Avatar src={imageUrl + "tomcat.png" } /></li>
+                <li>Docker <Avatar src={imageUrl + "docker.png" } /></li>
               </ul>
             </CardText>
           </Card>
@@ -82,11 +88,11 @@ export default class About extends React.Component {
             <CardTitle title="Frontend" subtitle="ReactJS" />
             <CardText>
               <ul class="tech-list">
-                <li>EcmaScript 6 <Avatar src="http://jsrocks.org/images/icon-logo-js.png" /></li>
-                <li>ReactJS <Avatar src="https://avatars2.githubusercontent.com/reactjs-cn?&s=256" /></li>
-                <li>React Flux <Avatar src="https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9bc0948492733596c2ee8c078c546a6f0a1ff1f4/medium.jpg?1422718920" /></li>
-                <li>Webpack <Avatar src="https://firebearstudio.com/blog/wp-content/uploads/2015/09/Webpack.png" /></li>
-                <li>Material UI <Avatar src="http://www.material-ui.com/images/favicon.ico" /></li>
+                <li>EcmaScript 6 <Avatar src={imageUrl + "ecma6.png" } /></li>
+                <li>ReactJS <Avatar src={imageUrl + "reactjs.png" } /></li>
+                <li>React Flux <Avatar src={imageUrl + "flux.jpg" } /></li>
+                <li>Webpack <Avatar src={imageUrl + "webpack.png" } /></li>
+                <li>Material UI <Avatar src={imageUrl + "materialui.ico" } /></li>
               </ul>
             </CardText>
           </Card>

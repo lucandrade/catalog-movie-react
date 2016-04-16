@@ -1,14 +1,9 @@
 import Axios from "axios";
 
-var development = /(localhost)/.test(window.location.href);
-var url = "http://catalogmovie.herokuapp.com/";
-
-if (development) {
-  url = "http://localhost:8080/";
-}
+import Constants from '../constants/AppConstants';
 
 var instance = Axios.create({
-  baseURL: url
+  baseURL: Constants.api_url
 });
 
 export default instance;
